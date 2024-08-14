@@ -73,10 +73,6 @@ def plot_data(data, xaxis='Epoch', value="AverageEpRet",
  (0.09019607843137255, 0.7450980392156863, 0.8117647058823529)]
 )
     #"""
-    print('*'*100)
-    print(data)
-    print(value)
-    print('*'*100)
     # sns.tsplot(data=data, time=xaxis, value=value, unit="Unit", condition=condition, ci='sd', **kwargs)
     sns.lineplot(data=data, x=xaxis, y=value, hue=condition, ci='sd', **kwargs)
     """
