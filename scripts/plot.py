@@ -5,6 +5,7 @@ import json
 import os
 import os.path as osp
 import numpy as np
+import pdb
 
 DIV_LINE_WIDTH = 50
 
@@ -72,7 +73,12 @@ def plot_data(data, xaxis='Epoch', value="AverageEpRet",
  (0.09019607843137255, 0.7450980392156863, 0.8117647058823529)]
 )
     #"""
-    sns.tsplot(data=data, time=xaxis, value=value, unit="Unit", condition=condition, ci='sd', **kwargs)
+    print('*'*100)
+    print(data)
+    print(value)
+    print('*'*100)
+    # sns.tsplot(data=data, time=xaxis, value=value, unit="Unit", condition=condition, ci='sd', **kwargs)
+    sns.lineplot(data=data, x=xaxis, y=value, hue=condition, ci='sd', **kwargs)
     """
     If you upgrade to any version of Seaborn greater than 0.8.1, switch from 
     tsplot to lineplot replacing L29 with:
@@ -104,6 +110,9 @@ def plot_data(data, xaxis='Epoch', value="AverageEpRet",
 
     if ymax:
         plt.ylim(top=max(ymax, old_ymax))
+
+    plt.ylim(bottom=0)
+    plt.ylim(top=30)
 
     #if title:
     #    plt.title(title)

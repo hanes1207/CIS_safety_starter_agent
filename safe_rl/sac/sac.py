@@ -2,7 +2,7 @@
 
 from functools import partial
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 import gym
 import time
 from safe_rl.utils.logx import EpochLogger

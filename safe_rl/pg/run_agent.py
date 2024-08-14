@@ -1,5 +1,5 @@
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 import gym
 import time
 import safe_rl.pg.trust_region as tro
@@ -351,7 +351,7 @@ def run_polopt_agent(env_fn,
         for t in range(local_steps_per_epoch):
 
             # Possibly render
-            if render and proc_id()==0 and t < 1000:
+            if render and proc_id()==0: # and t < 1000:
                 env.render()
             
             # Get outputs from policy
