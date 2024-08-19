@@ -14,6 +14,7 @@ from safe_rl.pg.utils import values_as_sorted_list
 from safe_rl.utils.logx import EpochLogger
 from safe_rl.utils.mpi_tf import MpiAdamOptimizer, sync_all_params
 from safe_rl.utils.mpi_tools import mpi_fork, proc_id, num_procs, mpi_sum
+tf.disable_v2_behavior()
 
 # Multi-purpose agent runner for policy optimization algos 
 # (PPO, TRPO, their primal-dual equivalents, CPO)
